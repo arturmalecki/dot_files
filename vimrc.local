@@ -1,0 +1,10 @@
+color default
+colorscheme default
+set guifont=Consolas\ 12
+set novb
+
+map th :tabprev<CR>
+map tl :tabnext<CR>
+map td :tabclose<CR>
+map tt :tabedit<Space>
+map tn :tabnext<Space>

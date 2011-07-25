@@ -1,0 +1,35 @@
+# activerecord logging methods
+# very useful for digging into
+# queries
+require 'logger'
+require 'activerecord' if rails?(2)
+
+def enable_logger
+    log_to(Logger.new(STDOUT))
+end
+
+def disable_logger
+    log_to(nil)
+end
+
+def log_to(logger)
+    ActiveRecord::Base.logger = logger
+    ActiveRecord::Base.clear_active_connections!
+end
+
+# logging into console by default
+enable_logger
+
+# prints nice informations
+# about a Model
+def show(object)
+    y object.class == Class ? object.column_names.sort : object.class.column_names.sort
+end
+
+def tables
+    y ActiveRecord::Base.connection.tables
+end
+
+# hirb enabled by default
+require_without_bundler 'hirb'
+Hirb.enable

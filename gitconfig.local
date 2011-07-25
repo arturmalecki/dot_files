@@ -1,0 +1,7 @@
+[user]
+	name = Artur Małecki
+	email = artur.malecki@aenima.pl
+[color]
+	diff = auto
+	status = auto
+	branch = auto
