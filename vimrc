@@ -5,22 +5,43 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Plugin system
+" Plugin system.
 Plugin 'gmarik/Vundle.vim'
 
-" Full path finder
+" Full path finder.
 Plugin 'ctrlpvim/ctrlp.vim'
 
-" Git wrapper
+" Git wrapper.
 Plugin 'tpope/vim-fugitive'
+
+" A Vim plugin which shows a git diff in the 'gutter' (sign column). It shows
+" whether each line has been added, modified, and where lines have been
+" removed.
 Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-rails'
+
+" Lean & mean status/tabline for vim that's light as air.
 Plugin 'bling/vim-airline'
-Plugin 'godlygeek/tabular'
-Plugin 'kchmck/vim-coffee-script'
+
+" The NERD tree allows you to explore your filesystem and to open files and
+" directories. It presents the filesystem to you in the form of a tree which
+" you manipulate with the keyboard and/or mouse. It also allows you to perform
+" simple filesystem operations.
 Plugin 'scrooloose/nerdtree'
+
+" Run your favorite search tool from Vim, with an enhanced results list.
+"
+" This plugin was designed as a Vim frontend for the Perl module App::Ack. Ack
+" can be used as a replacement for 99% of the uses of grep. The plugin allows
+" you to run ack from Vim, and shows the results in a split window.
 Plugin 'mileszs/ack.vim'
+
+" This plugin is a front for ag, A.K.A. the_silver_searcher. Ag can be used as
+" a replacement for 153% of the uses of ack. This plugin will allow you to run
+" ag from vim, and shows the results in a split window.
 Plugin 'rking/ag.vim'
+
+Plugin 'tpope/vim-rails'
+Plugin 'kchmck/vim-coffee-script'
 Plugin 'flazz/vim-colorschemes'
 
 " All of your Plugins must be added before the following line
