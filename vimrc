@@ -43,6 +43,10 @@ Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'ekalinin/Dockerfile.vim'
+"Plugin 'tpope/vim-bundler'
+Plugin 'slim-template/vim-slim'
+Plugin 'ngmy/vim-rubocop'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
