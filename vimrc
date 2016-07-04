@@ -47,6 +47,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 "Plugin 'tpope/vim-bundler'
 Plugin 'slim-template/vim-slim'
 Plugin 'ngmy/vim-rubocop'
+Plugin 'godlygeek/tabular'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -68,6 +69,7 @@ set incsearch
 set hlsearch
 set splitbelow
 set splitright
+set mouse=a
 
 " bind K to grep word under cursor
 nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
