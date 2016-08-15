@@ -48,6 +48,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'slim-template/vim-slim'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'godlygeek/tabular'
+Plugin 'vim-ruby/vim-ruby'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
