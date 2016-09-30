@@ -49,6 +49,7 @@ Plugin 'slim-template/vim-slim'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'godlygeek/tabular'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'elixir-lang/vim-elixir'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -80,6 +81,8 @@ let g:ctrlp_map               = '<c-p>'
 let g:ctrlp_cmd               = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore     = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_max_files         = 0
+let g:ctrlp_max_depth         = 40
 "let g:ctrlp_extensions        = ['tag']
 "let g:ctrlp_use_caching       = 0
 "let g:ctrlp_user_command      = 'ag %s --files-with-matches --ignore vendor --ignore bower_components --ignore dist --ignore node_modules --ignore tmp  --nocolor -g ""'
