@@ -50,6 +50,7 @@ Plugin 'ngmy/vim-rubocop'
 Plugin 'godlygeek/tabular'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'geoffharcourt/vim-matchit'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
