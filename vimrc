@@ -77,12 +77,16 @@ set mouse=a
 nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " ctrlp
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
 let g:ctrlp_map               = '<c-p>'
 let g:ctrlp_cmd               = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore     = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_max_files         = 0
 let g:ctrlp_max_depth         = 40
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
 "let g:ctrlp_extensions        = ['tag']
 "let g:ctrlp_use_caching       = 0
 "let g:ctrlp_user_command      = 'ag %s --files-with-matches --ignore vendor --ignore bower_components --ignore dist --ignore node_modules --ignore tmp  --nocolor -g ""'
