@@ -73,13 +73,41 @@ set hlsearch
 set splitbelow
 set splitright
 set mouse=a
+let mapleader=","
 
-" bind K to grep word under cursor
-nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
+" ------------------------------------------------------------
+"  Key Mappings
+" ------------------------------------------------------------
 
-" ctrlp
+map <leader>y "*y
+noremap _ dd p
+noremap - dd k P
+" Bind K to grep word under cursor
+nnoremap <leader>s :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" Move around splits with <c-hjkl>
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
+" Editing and reloading vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+"Check those mappings
+"map th :tabprev<CR>
+"map tl :tabnext<CR>
+"map td :tabclose<CR>
+"map tt :tabedit<Space>
+"map tn :tabnext<Space>
+
+
+" ------------------------------------------------------------
+"  CTRL P
+" ------------------------------------------------------------
+
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-
 let g:ctrlp_map               = '<c-p>'
 let g:ctrlp_cmd               = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
@@ -92,12 +120,5 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 "let g:ctrlp_use_caching       = 0
 "let g:ctrlp_user_command      = 'ag %s --files-with-matches --ignore vendor --ignore bower_components --ignore dist --ignore node_modules --ignore tmp  --nocolor -g ""'
 "let g:ctrlp_working_path_mode = 0
-
-"Check those mappings
-"map th :tabprev<CR>
-"map tl :tabnext<CR>
-"map td :tabclose<CR>
-"map tt :tabedit<Space>
-"map tn :tabnext<Space>
 
 set laststatus=2
