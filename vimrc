@@ -20,7 +20,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
 " Lean & mean status/tabline for vim that's light as air.
-Plugin 'bling/vim-airline'
+" Plugin 'bling/vim-airline'
 
 " The NERD tree allows you to explore your filesystem and to open files and
 " directories. It presents the filesystem to you in the form of a tree which
@@ -76,9 +76,13 @@ set mouse=a
 let mapleader=","
 
 " ------------------------------------------------------------
+"  Status Line
+" ------------------------------------------------------------
+:set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+
+" ------------------------------------------------------------
 "  Key Mappings
 " ------------------------------------------------------------
-
 map <leader>y "*y
 noremap _ dd p
 noremap - dd k P
@@ -92,7 +96,7 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
 " Editing and reloading vimrc
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>ev :tabnew $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 "Check those mappings
@@ -102,11 +106,9 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 "map tt :tabedit<Space>
 "map tn :tabnext<Space>
 
-
 " ------------------------------------------------------------
 "  CTRL P
 " ------------------------------------------------------------
-
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_map               = '<c-p>'
 let g:ctrlp_cmd               = 'CtrlP'
