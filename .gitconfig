@@ -1,0 +1,22 @@
+[user]
+	email = malecki.artur.84@gmail.com
+	name = Artur Malecki
+[diff]
+[core]
+	editor = vim
+  ui = auto
+[color]
+	ui = true
+[alias]
+  st = status
+  ci = commit --verbose
+  co = checkout
+  di = diff
+  ac = "!. ~/dot_files/.githelpers && add_all_and_commit"
+  poc = "!. ~/dot_files/.githelpers && push_to_current_branch"
+
+  # Fancy logging.
+  l = "!. ~/dot_files/.githelpers && pretty_git_log"
+
+[merge] 
+  tool = vimdiff
