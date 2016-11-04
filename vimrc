@@ -74,6 +74,7 @@ set splitbelow
 set splitright
 set mouse=a
 let mapleader=","
+set shell=/bin/zsh
 
 " ------------------------------------------------------------
 "  Status Line
