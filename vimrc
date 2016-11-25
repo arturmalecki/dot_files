@@ -51,6 +51,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'geoffharcourt/vim-matchit'
+Plugin 'powerline/powerline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -76,10 +77,43 @@ set mouse=a
 let mapleader=","
 set shell=/bin/zsh
 
+" Highlight column and row of cursor
+set cursorline
+"set cursorcolumn
+
 " ------------------------------------------------------------
 "  Status Line
 " ------------------------------------------------------------
-:set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+":set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+"set statusline=
+"set statusline+=%7*\[%n]                                  "buffernr
+"set statusline+=%1*\ %<%F\                                "File+path
+"set statusline+=%2*\ %y\                                  "FileType
+"set statusline+=%3*\ %{''.(&fenc!=''?&fenc:&enc).''}      "Encoding
+"set statusline+=%3*\ %{(&bomb?\",BOM\":\"\")}\            "Encoding2
+"set statusline+=%4*\ %{&ff}\                              "FileFormat (dos/unix..) 
+"set statusline+=%5*\ %{&spelllang}\%{HighlightSearch()}\  "Spellanguage & Highlight on?
+"set statusline+=%8*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
+"set statusline+=%9*\ col:%03c\                            "Colnr
+"set statusline+=%0*\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/bot.
+"
+"function! HighlightSearch()
+"  if &hls
+"    return 'H'
+"  else
+"    return ''
+"  endif
+"endfunction
+"
+"hi User1 guifg=#ffdad8  guibg=#880c0e
+"hi User2 guifg=#000000  guibg=#F4905C
+"hi User3 guifg=#292b00  guibg=#f4f597
+"hi User4 guifg=#112605  guibg=#aefe7B
+"hi User5 guifg=#051d00  guibg=#7dcc7d
+"hi User7 guifg=#ffffff  guibg=#880c0e gui=bold
+"hi User8 guifg=#ffffff  guibg=#5b7fbb
+"hi User9 guifg=#ffffff  guibg=#810085
+"hi User0 guifg=#ffffff  guibg=#094afe
 
 " ------------------------------------------------------------
 "  Key Mappings
@@ -125,3 +159,17 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 "let g:ctrlp_working_path_mode = 0
 
 set laststatus=2
+
+
+
+
+
+set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+set laststatus=2
+set t_Co=256
+set guifont=Inconsolata\ for\ Powerline:h15
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8
+set fillchars+=stl:\ ,stlnc:\
+set term=xterm-256color
+set termencoding=utf-8
