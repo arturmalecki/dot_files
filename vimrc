@@ -140,6 +140,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 "map td :tabclose<CR>
 "map tt :tabedit<Space>
 "map tn :tabnext<Space>
+"
+vnoremap <leader>/ y:tabnew \| :Ag "<C-R>""<CR>
 
 " ------------------------------------------------------------
 "  CTRL P
