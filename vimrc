@@ -133,6 +133,9 @@ set ttyfast
 " Force older regex engine
 set re=1
 
+" Make backsapce work like most other apps
+set backspace=2
+
 " Copy and Paste
 " ==============
 set clipboard=unnamed
