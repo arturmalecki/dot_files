@@ -124,8 +124,14 @@ set matchtime=3
 
 " General
 " =======
-" disable visual bell
+" Disable visual bell
 set t_vb= 
+
+" Indicates a fast terminal connection
+set ttyfast
+
+" Force older regex engine
+set re=1
 
 " Copy and Paste
 " ==============
