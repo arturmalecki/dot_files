@@ -9,7 +9,11 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Full path finder.
-Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'wincent/command-t'
+" Plugin 'junegunn/fzf.vim'
+Plugin 'junegunn/fzf'
+
 
 " Git wrapper.
 Plugin 'tpope/vim-fugitive'
@@ -52,6 +56,9 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'geoffharcourt/vim-matchit'
 Plugin 'powerline/powerline'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-rhubarb'
+Plugin 'ruanyl/vim-gh-line'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -76,6 +83,13 @@ set splitright
 set mouse=a
 let mapleader=","
 set shell=/bin/zsh
+set colorcolumn=120
+highlight ColorColumn ctermbg=gray
+set visualbell t_vb=
+
+syntax enable
+set background=light
+"colorscheme solarized
 
 " Highlight column and row of cursor
 set cursorline
@@ -146,32 +160,53 @@ vnoremap <leader>/ y:tabnew \| :Ag "<C-R>""<CR>
 " ------------------------------------------------------------
 "  CTRL P
 " ------------------------------------------------------------
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-let g:ctrlp_map               = '<c-p>'
-let g:ctrlp_cmd               = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore     = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_max_files         = 0
-let g:ctrlp_max_depth         = 40
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-
-"let g:ctrlp_extensions        = ['tag']
-"let g:ctrlp_use_caching       = 0
-"let g:ctrlp_user_command      = 'ag %s --files-with-matches --ignore vendor --ignore bower_components --ignore dist --ignore node_modules --ignore tmp  --nocolor -g ""'
-"let g:ctrlp_working_path_mode = 0
+" set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+" let g:ctrlp_map               = '<c-p>'
+" let g:ctrlp_cmd               = 'CtrlP'
+" let g:ctrlp_working_path_mode = 'ra'
+" let g:ctrlp_custom_ignore     = '\v[\/]\.(git|hg|svn)$'
+" let g:ctrlp_max_files         = 0
+" let g:ctrlp_max_depth         = 40
+" let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git'
+" " The Silver Searcher
+" if executable('ag')
+"   " Use ag over grep
+"   set grepprg=ag\ --nogroup\ --nocolor
+" 
+"   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+"   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" 
+"   "" ag is fast enough that CtrlP doesn't need to cache
+"   let g:ctrlp_use_caching = 0
+" endif
+" nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 set laststatus=2
-
-
-
-
 
 set rtp+=~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
 set laststatus=2
 set t_Co=256
-set guifont=Inconsolata\ for\ Powerline:h15
+"set guifont=Inconsolata\ for\ Powerline:h15
 let g:Powerline_symbols = 'fancy'
 set encoding=utf-8
 set fillchars+=stl:\ ,stlnc:\
 set term=xterm-256color
 set termencoding=utf-8
+set showmatch
+set matchtime=3
+
+" Copy and Paste
+" ==============
+set clipboard=unnamed
+
+vmap <F2> :!pbcopy<CR>  
+
+vmap <F3> :w !pbcopy<CR><CR>
+nmap <F3> :.w !pbcopy<CR><CR>
+
+nmap <F4> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+imap <F4> <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+
+" Full path finder
+
+nmap <C-p> <Esc>:FZF<CR>
